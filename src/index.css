@@ -1,11 +1,35 @@
 :root{
-    --body-margin-small: 24px;
+    --body-margin-small: 14px;
     --header-size: 60px;
+    --margin-portrait-m: 60px;
+    --margin-portrait-b: 85px;
+
+    --heading-line-height-s: 45px;
+    --heading-line-height-m: 65px;
+    --heading-line-height-b: 75px;
+    --heading-line-height-xb: 100px;
+    --heading-margin-s: 25px;
+    --p-size: 18px;
+    --p-line-height: 26px;
+    --btn-text: 16px;
+    --dark-blue: #0A2540;
+    --vibrant-purple: #7000FF;
+    --icon-margin-s: 10px;
+    --nav-anchor-size: 16px;
+    --spacing-s: 16px;
+
+    --heading-size: 45px;
+
+    --spacing-extra_large: 64px;
+    --spacing-large: 32px;
+    --spacing-medium: 16px;
+    --spacing-small: 8px;
 }
 
 *{
     box-sizing: border-box;
     margin: 0;
+    font-family: 'Roboto', sans-serif;
 }
 
 html,
@@ -21,7 +45,8 @@ body{
     padding-inline: var(--body-margin-small);
 }
 
-nav{
+nav,
+.hero{
     position: relative;
     z-index: 1;
 }
@@ -32,14 +57,15 @@ nav{
     align-items: center;
     width: 100%;
     height: var(--header-size);
+    margin-bottom: var(--spacing-large);
 }
 
 .background-gradient{
     background-color: #6EC3F4;
     width: 150%;
-    height: 500px;
+    height: 820px;
     position: fixed;
-    top: -259px;
+    top: -600px;
     left: 50%;
     translate: -50%;
     z-index: 0;
@@ -47,10 +73,56 @@ nav{
 }
 
 .primary-button{
-    background-color: rgba(250, 250, 250, 0.25);
+    background-color: #0A2540;
+    color: #fff ;
     padding: 8px 16px;
     border-radius: 20px;
     border: none;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button-text{
+    color: #fff ;
+    font-size: var(--btn-text);
+    white-space: nowrap;
+}
+
+.navBtn{
+    background-color: rgba(250, 250, 250, 0.25);
+    display: block;
+}
+
+.navBtn:hover{
+    background-color: rgba(250, 250, 250, 0.50);
+    cursor: pointer;
+}
+
+.contactBtn > .button-text{
+    color: var(--vibrant-purple);
+}
+
+.contactBtn{
+    background-color: transparent;
+    color: var(--vibrant-purple);
+    padding-inline: 12px;
+}
+
+ion-icon{
+    font-size: 20px;
+    margin-left: var(--icon-margin-s);
+    transition: transform 0.25s ease;
+}
+
+.primary-button:hover > ion-icon{
+    transform: translateX(4px);
+}
+
+.brief-buttons > .primary-button:hover{
+    opacity: 0.75;
+    cursor: pointer;
 }
 
 .hamMenu-line{
@@ -61,4 +133,235 @@ nav{
 
 .hamMenu-line:nth-child(2){
     margin-block: 3px;
+}
+
+.hero{
+    margin-top: var(--margin-portrait-m);
+    height: min-content;
+}
+
+h1{
+    font-size: var(--heading-size);
+    line-height: var(--heading-line-height-s);
+    font-family: 'Anek Telugu', sans-serif;
+    letter-spacing: -1px;
+}
+
+p{
+    font-size: var(--p-size);
+    font-family: 'Roboto', sans-serif;
+    line-height: var(--p-line-height);
+    margin-block: 16px;
+}
+
+.brief-buttons{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-block: 30px;
+}
+
+.navBtn{
+    position: relative;
+}
+
+.products{
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: repeat(4,1fr);
+    column-gap: var(--spacing-medium);
+    row-gap: var(--spacing-large);
+    margin-top: var(--spacing-extra_large);
+}
+
+.product-image{
+    width: 100%;
+}
+
+.hero-phone{
+    display: none;
+}
+
+main, nav{
+    max-width: 1144px;
+}
+
+.hero-brief{
+    width: 100%;
+}
+
+.phoneContainer{
+    width: 40%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.landscape{
+    display: none;
+}
+
+@media screen and (min-width: 385px){
+    :root{
+        --heading-size: 58px;
+    }
+
+    h1{
+        line-height: var(--heading-line-height-m);
+    }
+}
+
+@media screen and (min-width: 550px) {
+    .products{
+        grid-template-columns: repeat(4,1fr);
+        grid-template-rows: repeat(2,1fr);
+    }
+}
+
+@media screen and (min-width: 600px) {
+    nav{
+        margin-bottom: var(--spacing-extra_large);
+    }
+    
+    .hero{
+        display: flex;
+        justify-content: space-between;
+        align-items: start;
+        margin-bottom: -85px;
+    }
+
+    .hero-phone{
+        display: block;
+        width: auto;
+        height: 420px;
+        object-fit: contain;
+    }
+
+    .phoneContainer{
+        position: relative;
+    }
+
+    .hero-brief{
+        width: 60%;
+        padding-right: 16px;
+    }
+
+    .background-gradient{
+        top: -555px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    :root{
+        --heading-size: 70px;
+    }
+
+    .hero{
+        align-items: start;
+    }
+
+    .portrait{
+        display: none;
+    }
+
+    .landscape{
+        display: block;
+    }
+
+    .nav-div{
+        display: flex;
+        align-items: center;
+    }
+
+    .nav-anchor{
+        font-size: var(--nav-anchor-size);
+        color: #FFFFFF;
+        font-weight: 700;
+        margin-inline: var(--spacing-s);
+        text-decoration: none;
+    }
+
+    .nav-anchor:hover{
+        text-decoration: underline;
+    }
+
+    h1{
+        line-height: var(--heading-line-height-b);
+    }
+
+    .background-gradient{
+        top: -600px;
+    }
+
+    .hero-phone{
+        height: 490px;
+    }
+
+    nav{
+        padding-inline: 16px;
+    }
+
+    .background-gradient{
+        height: 978px;
+    }
+
+    .hero-phone{
+        height: 550px;
+    }
+
+    .phoneContainer{
+        top: -85px;
+    }
+}
+
+@media screen and (min-width: 850px){
+    .phoneContainer{
+        top: -60px;
+    }
+
+    .hero{
+        margin-bottom: -60px;
+    }
+
+    :root{
+        --heading-size: 80px;
+    }
+
+    .products{
+        margin-top: 0;
+    }
+
+    nav{
+        margin-bottom: var(--spacing-extra_large);
+    }
+
+    .hero{
+        margin-top: calc(var(--spacing-extra_large) + 35px);
+    }
+
+    .product-image{
+        height: 60px;
+        width: auto;
+    }
+}
+
+@media screen and (min-width: 1144px) {
+    :root{
+        --heading-size: 94px;
+    }
+
+    h1{
+        line-height: 108px;
+    }
+
+    .hero-phone{
+        height: 628px;
+        top: -32px;
+        transform: translateX(32px);
+    }
+
+    .hero{
+        margin-bottom: -32px;
+        margin-top: var(--spacing-extra_large);
+    }
 }

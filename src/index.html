@@ -12,7 +12,17 @@
 <body>
     <nav>
         <img src="./assets/logos/swipe-logo-white.svg" alt="swipe logo">
-        <button class="primary-button portrait">
+        <div class="nav-div landscape">
+            <a href="" class="nav-anchor landscape">Products</a>
+            <a href="" class="nav-anchor landscape">Solutions</a>
+            <a href="" class="nav-anchor landscape">Developers</a>
+            <a href="" class="nav-anchor landscape">Resources</a>
+            <a href="" class="nav-anchor landscape">Pricing</a>
+        </div>
+        <button class="primary-button navBtn landscape">
+            Sign In
+        </button>
+        <button class="primary-button portrait navBtn" id="nav-btn">
             <div class="hamMenu-line"></div>
             <div class="hamMenu-line"></div>
             <div class="hamMenu-line"></div>
@@ -27,12 +37,34 @@
                 entire financial transaction infrastructure online.
                 </p>
                 <div class="brief-buttons">
-                    <button class="primary-button">Start now</button>
-                    <button class="primary-button">Contact sales</button>
+                    <button class="primary-button">
+                        <span class="button-text">Start now</span>
+                        <ion-icon name="arrow-forward-outline"></ion-icon>
+                    </button>
+                    <button class="primary-button contactBtn">
+                        <span class="button-text">Contact sales</span>
+                        <ion-icon name="arrow-forward-outline"></ion-icon>
+                    </button>
                 </div>
             </div>
+            <div class="phoneContainer">
+                <img class="hero-phone" src="./assets/images/hero-phone.png" alt="">
+            </div>
+        </section>
+        <section class="products">
+            <img src="./assets/logos/instacart.png" alt="" class="product-image">
+            <img src="./assets/logos/salesforce.png" alt="" class="product-image">
+            <img src="./assets/logos/shopify.png" alt="" class="product-image">
+            <img src="./assets/logos/google.png" alt="" class="product-image">
+            <img src="./assets/logos/amazon.png" alt="" class="product-image">
+            <img src="./assets/logos/slack.png" alt="" class="product-image">
+            <img src="./assets/logos/lyft.png" alt="" class="product-image">
+            <img src="./assets/logos/zoom.png" alt="" class="product-image">
         </section>
     </main>
     <div class="background-gradient"></div>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="./index.js"></script>
 </body>
 </html>
