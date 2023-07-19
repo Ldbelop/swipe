@@ -51,7 +51,7 @@ nav,
     z-index: 1;
 }
 
-nav{
+.nav{
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -64,7 +64,7 @@ nav{
     background-color: #6EC3F4;
     width: 150%;
     height: 820px;
-    position: fixed;
+    position: absolute;
     top: -600px;
     left: 50%;
     translate: -50%;
@@ -110,13 +110,13 @@ nav{
     padding-inline: 12px;
 }
 
-ion-icon{
+.icon{
     font-size: 20px;
     margin-left: var(--icon-margin-s);
     transition: transform 0.25s ease;
 }
 
-.primary-button:hover > ion-icon{
+.primary-button:hover > .icon{
     transform: translateX(4px);
 }
 
@@ -140,14 +140,14 @@ ion-icon{
     height: min-content;
 }
 
-h1{
+.banner{
     font-size: var(--heading-size);
     line-height: var(--heading-line-height-s);
     font-family: 'Anek Telugu', sans-serif;
     letter-spacing: -1px;
 }
 
-p{
+.paragraph{
     font-size: var(--p-size);
     font-family: 'Roboto', sans-serif;
     line-height: var(--p-line-height);
@@ -183,7 +183,7 @@ p{
     display: none;
 }
 
-main, nav{
+.main, .nav{
     max-width: 1144px;
 }
 
@@ -206,7 +206,7 @@ main, nav{
         --heading-size: 58px;
     }
 
-    h1{
+    .banner{
         line-height: var(--heading-line-height-m);
     }
 }
@@ -219,7 +219,7 @@ main, nav{
 }
 
 @media screen and (min-width: 600px) {
-    nav{
+    .nav{
         margin-bottom: var(--spacing-extra_large);
     }
     
@@ -285,7 +285,7 @@ main, nav{
         text-decoration: underline;
     }
 
-    h1{
+    .banner{
         line-height: var(--heading-line-height-b);
     }
 
@@ -297,7 +297,7 @@ main, nav{
         height: 490px;
     }
 
-    nav{
+    .nav{
         padding-inline: 16px;
     }
 
@@ -331,7 +331,7 @@ main, nav{
         margin-top: 0;
     }
 
-    nav{
+    .nav{
         margin-bottom: var(--spacing-extra_large);
     }
 
@@ -350,7 +350,7 @@ main, nav{
         --heading-size: 94px;
     }
 
-    h1{
+    .banner{
         line-height: 108px;
     }
 
