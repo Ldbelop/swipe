@@ -5,6 +5,10 @@
     --subtitle-line-height: 26px;
 
     --title-size: 34px;
+    --sub-subtitle-size: 16px;
+
+    --secondary-txt-size: 14px;
+    --secondary-txt-line-height: 18px;
 
     --margin-portrait-m: 60px;
     --margin-portrait-b: 85px;
@@ -33,6 +37,8 @@
     --purple: #6262f7;
     --black: #000;
     --light-white: #f7f9fc;
+    --light-blue: #00d4ff;
+    --grey: #adbdcc;
 }
 
 *{
@@ -195,8 +201,23 @@ body{
     display: none;
 }
 
-.main, .nav{
+.nav,
+.hero,
+.products,
+.unified-platform{
     max-width: 1144px;
+}
+
+.hero,
+.products,
+.unified-platform{
+    padding-inline: var(--spacing-medium);
+}
+
+.main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .hero-brief{
@@ -266,6 +287,124 @@ body{
     margin-bottom: var(--spacing-medium);
 }
 
+.integrations-section{
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    padding-top: 8px;
+    padding-inline: var(--spacing-medium);
+    padding-block: var(--spacing-large);
+}
+
+.back-div{
+    height: 900px;
+    content: "";
+    width: 100vw;
+    height: 900px;
+    background-color: var(--dark-blue);
+    position: absolute;
+    top: 50%;
+    left: 0;
+    z-index: -1;
+    transform: skewY(-10deg) translateY(-50%);
+}
+
+.integration-left > .subtitle{
+    color: var(--light-blue);
+}
+
+.integration-left > .title,
+.integration-left > .paragraph
+{
+    color: var(--light-white);
+}
+
+.integration-left > .primary-button,
+.integration-left > .primary-button > span{
+    color: var(--dark-blue);
+}
+
+.integration-left > .primary-button{
+    background-color: var(--light-blue);
+}
+
+.integration-left > .primary-button:hover{
+    background-color: var(--light-white);
+    opacity: 1;
+}
+
+.description-containers{
+    margin-block: var(--spacing-large);
+}
+
+.description{
+    padding-block: var(--spacing-small);
+    padding-right: var(--spacing-medium);
+}
+
+.description-image{
+    height: 50px;
+    margin-bottom: var(--spacing-small);
+}
+
+.sub-subtitle{
+    font-size: var(--sub-subtitle-size);
+    font-weight: 500;
+    color: var(--light-white);
+}
+
+.secondary-text{
+    font-size: var(--secondary-txt-size);
+    line-height: var(--secondary-txt-line-height);
+    letter-spacing: 0.25px;
+    color: var(--grey);
+    margin-block: var(--spacing-medium);
+}
+
+.secondary-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    border: none;
+    color: var(--light-blue);
+    font-weight: bold;
+    letter-spacing: 1.25px;
+    font-size: var(--btn-text);
+    transition: all 0.15s ease;
+}
+
+.secondary-button:hover{
+    opacity: 0.75;
+    cursor: pointer;
+}
+
+.secondary-button > span{
+    color: var(--light-blue);
+}
+
+.secondary-button > .icon{
+    transition: translate 0.25s ease;
+}
+
+.secondary-button:hover > .icon{
+    transform: translateX(4px);
+}
+
+.container-div{
+    width: 100%;
+    max-width: 1114px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.integration-right{
+    display: none;
+}
+
 @media screen and (min-width: 385px){
     :root{
         --heading-size: 58px;
@@ -325,6 +464,26 @@ body{
     .background-gradient{
         top: -555px;
     }
+}
+
+#credit{
+    grid-area: card;
+    width: 100%;
+}
+
+#phone{
+    grid-area: phone;
+    width: 100%;
+}
+
+#slack{
+    grid-area: slack;
+    width: 100%;
+}
+
+#dash{
+    grid-area: dash;
+    width: 100%;
 }
 
 @media screen and (min-width: 768px) {
@@ -410,26 +569,6 @@ body{
         padding-block: var(--spacing-large);
         padding-top: calc(var(--spacing-large) + var(--spacing-extra_large));
     }
-
-    #credit{
-        grid-area: card;
-        width: 100%;
-    }
-
-    #phone{
-        grid-area: phone;
-        width: 100%;
-    }
-
-    #slack{
-        grid-area: slack;
-        width: 100%;
-    }
-
-    #dash{
-        grid-area: dash;
-        width: 100%;
-    }
 }
 
 @media screen and (min-width: 850px){
@@ -460,6 +599,41 @@ body{
     .product-image{
         height: 60px;
         width: auto;
+    }
+}
+
+@media screen and (min-width: 1070px) {
+    .integrations-section{
+        flex-direction: row;
+        justify-content: center;
+        margin-block: var(--spacing-extra_large);
+    }
+
+    .integration-right{
+        display: block;
+    }
+
+    .back-div{
+        height: 1100px;
+    }
+
+    .integration-left,
+    .integration-right{
+        width: 50%;
+    }
+
+    .integration-right > .integration-images{
+        width: 100%;
+        max-width: 470px;
+        border-radius: 20px;
+    }
+
+    .integration-right{
+        max-width: 470px;
+    }
+
+    .description-containers{
+        display: flex;
     }
 }
 
