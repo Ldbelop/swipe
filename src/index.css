@@ -6,6 +6,7 @@
 
     --title-size: 34px;
     --sub-subtitle-size: 16px;
+    --bullet-size: 16px;
 
     --secondary-txt-size: 14px;
     --secondary-txt-line-height: 18px;
@@ -288,7 +289,8 @@ body{
     margin-bottom: var(--spacing-medium);
 }
 
-.integrations-section{
+.integrations-section,
+.global-structure{
     width: 100vw;
     display: flex;
     flex-direction: column;
@@ -301,10 +303,9 @@ body{
 }
 
 .back-div{
-    height: 900px;
     content: "";
     width: 100vw;
-    height: 900px;
+    height: 110%;
     background-color: var(--dark-blue);
     position: absolute;
     top: 50%;
@@ -423,6 +424,50 @@ body{
     color: var(--black);
 }
 
+.global-structure > .container-div{
+    display: flex;
+    flex-direction: column;
+}
+
+.vertical-two{
+    margin-block: var(--spacing-medium);
+}
+
+.bullet-heading{
+    font-family: 'Anek Telugu', sans-serif;
+    color: var(--light-white);
+    padding-left: var(--spacing-small);
+    line-height: 28px;
+    font-weight: 500;
+    margin: 0;
+    font-size: var(--bullet-size);
+    border-left: 2px solid var(--light-blue);
+}
+
+.vertical-one > .integration-right{
+    display: block;
+    position: absolute;
+    left: var(--spacing-medium);
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.vertical-one > .integration-left > .paragraph > span{
+    color: var(--light-blue);
+    font-weight: 500;
+    transition: color 0.25s ease;
+}
+
+.vertical-one > .integration-left > .paragraph > span:hover{
+    color: var(--light-white);
+    cursor: pointer;
+}
+
+#global-image{
+    opacity: 10%;
+    max-width: 844px;
+}
+
 @media screen and (min-width:340px){
     .why-swipe{
         margin-block: calc(var(--spacing-extra_large) * 2);
@@ -454,6 +499,53 @@ body{
 
     .unified-platform{
         padding-block: var(--spacing-extra_large);
+    }
+    
+    .vertical-one{
+        display: flex;
+        align-items: center;
+    }
+
+    .vertical-one > .integration-right{
+        position: relative;
+        transform: translate(0);
+    }
+
+    .vertical-one > .integration-right,
+    .vertical-one > .integration-left{
+        width: 50%;
+    }
+
+    #global-image{
+        position: relative;
+        left: 0;
+        height: auto;
+    }
+
+
+    .integration-left > .subtitle,
+    .integration-left > .title,
+    .integration-left > .paragraph{
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .vertical-two{
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: -64px;
+    }
+
+    .vertical-two > .description{
+        width: 50%;
+    }
+
+    .global-structure > .back-div{
+        height: 117%;
+    }
+
+    #global-image{
+        opacity: 25%;
     }
 }
 
@@ -605,6 +697,16 @@ body{
     .fourElements > .description{
         width: 25%;
     }
+
+    .vertical-two > .description{
+        width: 25%;
+    }
+
+    :root{
+        --bullet-size: 22px;
+    }
+
+
 }
 
 @media screen and (min-width: 850px){
@@ -649,9 +751,9 @@ body{
         display: block;
     }
 
-    .back-div{
+    /* .back-div{
         height: 1100px;
-    }
+    } */
 
     .integration-left,
     .integration-right{
@@ -674,6 +776,10 @@ body{
 
     .why-swipe{
         margin-block: calc(var(--spacing-extra_large) * 4);
+    }
+
+    .back-div{
+        height: 135%;
     }
 }
 
