@@ -204,7 +204,8 @@ body{
 .nav,
 .hero,
 .products,
-.unified-platform{
+.unified-platform,
+.why-swipe{
     max-width: 1144px;
 }
 
@@ -396,13 +397,36 @@ body{
 
 .container-div{
     width: 100%;
-    max-width: 1114px;
+    max-width: 1144px;
     display: flex;
     justify-content: space-between;
 }
 
 .integration-right{
     display: none;
+}
+
+.why-swipe{
+    display: flex;
+    flex-direction: column;
+    padding-inline: var(--spacing-medium);
+    margin-block: var(--spacing-extra_large);
+}
+
+.fourElements{
+    display: flex;
+    flex-wrap: wrap;
+    margin-block: var(--spacing-small);
+}
+
+.fourElements > .description > .secondary-text{
+    color: var(--black);
+}
+
+@media screen and (min-width:340px){
+    .why-swipe{
+        margin-block: calc(var(--spacing-extra_large) * 2);
+    }
 }
 
 @media screen and (min-width: 385px){
@@ -463,6 +487,14 @@ body{
 
     .background-gradient{
         top: -555px;
+    }
+
+    .fourElements{
+        margin-block: var(--spacing-large);
+    }
+
+    .fourElements > .description{
+        width: 50%;
     }
 }
 
@@ -569,6 +601,10 @@ body{
         padding-block: var(--spacing-large);
         padding-top: calc(var(--spacing-large) + var(--spacing-extra_large));
     }
+
+    .fourElements > .description{
+        width: 25%;
+    }
 }
 
 @media screen and (min-width: 850px){
@@ -634,6 +670,10 @@ body{
 
     .description-containers{
         display: flex;
+    }
+
+    .why-swipe{
+        margin-block: calc(var(--spacing-extra_large) * 4);
     }
 }
 
