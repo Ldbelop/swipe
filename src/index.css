@@ -54,11 +54,17 @@ body{
     min-height: 100%;
 }
 
+html{
+    overflow: auto;
+}
+
 body{
     display: flex;
     flex-direction: column;
     align-items: center;
     padding-inline: var(--spacing-medium);
+    overflow: hidden;
+    position: relative;
 }
 
 .nav,
@@ -205,7 +211,7 @@ body{
 .nav,
 .hero,
 .products,
-.unified-platform,
+.unified-platform > .container-div,
 .why-swipe{
     max-width: 1144px;
 }
@@ -243,7 +249,9 @@ body{
     width: 100%;
 }
 
-.unified-platform > .primary-button{
+.unified-platform > .primary-button,
+.session-description > .primary-button,
+.closer > .container-div > .vertical-two > .two-div > .primary-button{
     margin-block: var(--spacing-medium);
     background-color: var(--purple);
 }
@@ -256,7 +264,8 @@ body{
     padding-right: var(--spacing-medium);
 }
 
-.subtitle{
+.subtitle,
+.sub-title{
     margin-block: var(--spacing-medium);
     color: var(--purple);
     font-size: var(--subtitle-size);
@@ -340,11 +349,6 @@ body{
 
 .description-containers{
     margin-block: var(--spacing-large);
-}
-
-.description{
-    padding-block: var(--spacing-small);
-    padding-right: var(--spacing-medium);
 }
 
 .description-image{
@@ -468,6 +472,131 @@ body{
     max-width: 844px;
 }
 
+.closer{
+    background-color: #fff;
+    padding-inline: var(--spacing-medium);
+    width: 100%;
+    display: flex;
+    position: relative;
+    z-index: 3;
+}
+
+#session-logo{
+    width: 80%;
+}
+
+#long-line{
+    height: 50%;
+    transform: skewY(0);
+}
+
+.unified-platform{
+    display: flex;
+    justify-content: center;
+}
+
+.unified-platform > .container-div,
+.closer > .container-div{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+.unified-platform > .container-div > .flex-twoCol{
+    width: 100%;
+}
+
+.closer{
+    padding-block: var(--spacing-extra_large);
+    padding-inline: var(--spacing-medium);
+    max-width: 100vw;
+}
+
+.swipe-session-card{
+    box-shadow:  0px 2px 40px rgba(0, 0, 0, 0.15);
+    max-height: 540px;
+    height: 446px;
+    max-width: 446px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    margin-block: var(--spacing-extra_large);
+}
+
+.images{
+    display: flex;
+    height: 80px;
+    width: calc(80px * 2 - 25px);
+    margin-block: var(--spacing-large);
+}
+
+.images > img:nth-child(2){
+    position: relative;
+    left: -25px;
+}
+
+.swipe-session-card::before{
+    background: linear-gradient( 101.33deg, #08209a 0.76%, #6563ff 33.33%, #36c5f0 76.92%, #83e2ff 96.96% );
+    width: 100%;
+    height: 100%;
+    content: "";
+    display: block;
+    position: absolute;
+    z-index: 0;
+    transform: skewY(-5deg);
+    top: -265px;
+}
+
+.card-content{
+    position: relative;
+    max-height: 446px;
+    height: 50%;
+}
+
+.swipe-session-card > .description > .secondary-text{
+    color: var(--black);
+}
+
+.vertical-two > .description{
+    width: 100%;
+}
+
+#session-logo,
+.images,
+.card-content{
+    position: relative;
+    z-index: 1;
+}
+
+.session-description,
+.swipe-session-card{
+    width: 100%;
+}
+
+.swipe-session-card > .description{
+    width: 50%;
+}
+
+.two-div-right > .description > .secondary-text{
+    color: var(--black);
+}
+
+.two-div-right{
+    margin-block: var(--spacing-medium);
+}
+
+.sub-title{
+    color: var(--black);
+}
+
+.vertical-one{
+    width: 100%;
+}
+
 @media screen and (min-width:340px){
     .why-swipe{
         margin-block: calc(var(--spacing-extra_large) * 2);
@@ -482,6 +611,17 @@ body{
 
     .banner{
         line-height: var(--heading-line-height-m);
+    }
+}
+
+@media screen and (min-width: 500px){
+    #session-logo{
+        width: 300px;
+    }
+
+    .swipe-session-card > .images,
+    .swipe-session-card > .description{
+        width: 80%;
     }
 }
 
@@ -547,6 +687,12 @@ body{
     #global-image{
         opacity: 25%;
     }
+
+    .closer > .container-div > .vertical-one,
+    .closer > .container-div > .vertical-two{
+        display: block;
+        margin-top: 0;
+    }
 }
 
 @media screen and (min-width: 600px) {
@@ -608,6 +754,20 @@ body{
 #dash{
     grid-area: dash;
     width: 100%;
+}
+
+.closer{
+    display: flex;
+    justify-content: center;
+}
+
+.vertical-one,
+.vertical-two{
+    justify-content: space-between;
+}
+
+.purple{
+    color: var(--vibrant-purple) !important;
 }
 
 @media screen and (min-width: 768px) {
@@ -706,7 +866,59 @@ body{
         --bullet-size: 22px;
     }
 
+    .closer > .container-div > .vertical-one,
+    .closer > .container-div > .vertical-two{
+        display: flex;
+    }
 
+    .closer > .container-div > .vertical-one{
+        display: flex;
+    }
+
+    .closer > .container-div > .vertical-two{
+        display: flex;
+    }
+
+    .closer > .container-div > .vertical-one > .session-description,
+    .closer > .container-div > .vertical-one > .swipe-session-card{
+        width: 50%;
+    }
+
+    .closer > .container-div > .vertical-two > .two-div,
+    .closer > .container-div > .vertical-two > .two-div-right{
+        width: 50%;
+    }
+
+    .closer > .container-div > .vertical-one > .session-description > .title,
+    .closer > .container-div > .vertical-two > .two-div > .title{
+        width: 100%;
+    }
+
+    .closer > .container-div > .vertical-one > .session-description,
+    .closer > .container-div > .vertical-two > .two-div{
+        padding-right: var(--spacing-extra_large);
+    }
+
+    .two-div-right{
+        display: flex;
+    }
+
+    .two-div-right > .description{
+        width: 50%;
+    }
+
+    .two-div-right > .description:nth-child(1){
+        margin-right: var(--spacing-small);
+    }
+
+    :root{
+        --subtitle-size: 22px;
+    }
+
+    .swipe-session-card{
+        width: 540px;
+        max-width: 540px;
+    }
 }
 
 @media screen and (min-width: 850px){
